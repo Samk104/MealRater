@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/restaurant"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dish"
+        app:layout_constraintRight_toLeftOf="@id/resName"
+        android:textStyle="bold"
+        android:layout_marginTop="95dp"
+        android:layout_marginLeft="50dp"/>
+
+    <EditText
+        android:id="@+id/resName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        app:layout_constraintLeft_toRightOf="@id/res"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dishName"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="30dp"/>
+
+    <TextView
+        android:id="@+id/dish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dish"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/dishName"
+        app:layout_constraintBottom_toTopOf="@id/rating"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/res"
+        android:layout_marginTop="175dp"
+        android:layout_marginLeft="80dp"/>
+
+    <EditText
+        android:id="@+id/dishName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintLeft_toRightOf="@id/dish"
+        app:layout_constraintTop_toBottomOf="@id/resName"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/givenRating"
+        android:layout_marginRight="30dp"/>
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="155dp"
+        android:layout_marginBottom="70dp"
+        android:text="@string/rating"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/rateMeal"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/dish"
+       />
+
+    <TextView
+        android:id="@+id/givenRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="130dp"
+        android:layout_marginBottom="25dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/rateMeal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dishName" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:name="com.sam.mealrater.fragment.MealRating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+
+    <Button
+        android:id="@+id/saveDB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE INFO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/rateMeal"
+        android:layout_marginLeft="70dp"
+        android:layout_marginBottom="80dp"
+        android:onClick="rateMeal"
+        android:backgroundTint="#6C7BE6"/>
+
+    <Button
+        android:id="@+id/rateMeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rate_meal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="200dp"
+        android:layout_marginBottom="80dp"
+        android:onClick="rateMeal"
+        android:backgroundTint="#6C7BE6"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
